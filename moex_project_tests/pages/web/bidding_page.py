@@ -1,5 +1,5 @@
-from utils import BaseActions, step
-from test_data import LocationsBiddingPage
+from moex_project_tests.utils import BaseActions, step
+from moex_project_tests.test_data import LocationsBiddingPage
 
 
 class BiddingPage(BaseActions):

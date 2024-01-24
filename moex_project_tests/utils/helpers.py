@@ -3,7 +3,7 @@ import logging
 import os
 import allure
 import requests
-from test_data import resources_path
+from moex_project_tests.test_data import resources_path
 from datetime import datetime
 
 

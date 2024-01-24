@@ -1,5 +1,5 @@
-from utils import BaseActions, step, get_current_time
-from test_data import LocationsMainPage, MoexUrl, MoexVariables
+from moex_project_tests.utils import BaseActions, step, get_current_time
+from moex_project_tests.test_data import LocationsMainPage, MoexUrl, MoexVariables
 
 
 class MainPage(BaseActions):
@@ -19,14 +19,15 @@ class MainPage(BaseActions):
         with step('Проверка отображения поиска в верхнем меню'):
             self.check_visibility(LocationsMainPage.search_field_icon)
 
-    def check_visibility_cart_button_at_top_menu(self):
-        with step('Проверка отображения корзины в верхнем меню'):
-            self.check_visibility(LocationsMainPage.cart_button)
-
     def open_new_tab_school(self):
         with step('Открыть новую вкладку - Обучение'):
             self.click_href(MoexUrl.SCHOOL_URL)
             self.switch_tab()
+
+    def check_visibility_cart_button_at_top_menu(self):
+        with step('Проверка отображения корзины в верхнем меню'):
+            self.check_visibility(LocationsMainPage.cart_button)
+
 
     def click_href(self, link_href):
         with step('Открыть раздел обучения'):

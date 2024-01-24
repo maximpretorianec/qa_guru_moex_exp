@@ -1,8 +1,8 @@
 import allure
 
-from utils import TypeTag, Severity
-from test_data import MoexVariables
-from pages.web import MainPage, BiddingPage
+from moex_project_tests.utils import TypeTag, Severity
+from moex_project_tests.test_data import MoexVariables
+from moex_project_tests.pages.web import MainPage, BiddingPage
 
 
 @allure.epic('Главная страница')
