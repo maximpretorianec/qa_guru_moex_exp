@@ -3,6 +3,7 @@ import logging
 import os
 import allure
 import requests
+import zoneinfo
 from moex_project_tests.test_data import resources_path
 from datetime import datetime
 
@@ -48,4 +49,5 @@ def log_to_console(response):
 
 
 def get_current_time():
-    return str(datetime.now().strftime("%H:%M"))
+    zone = zoneinfo.ZoneInfo("Europe/Moscow")
+    return str(datetime.now(zone).strftime("%H:%M"))
