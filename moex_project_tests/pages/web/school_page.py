@@ -1,8 +1,11 @@
-from utils import BaseActions, step
-from test_data import LocationsSchoolPage
+from moex_project_tests.utils import BaseActions, step
+from moex_project_tests.test_data import LocationsSchoolPage
 
 
 class SchoolPage(BaseActions):
     def check_visibility_moex_school_logo(self):
         with step('Иконка школы MOEX отображается в верхнем меню'):
             self.check_visibility(LocationsSchoolPage.moex_school_logo)
+
+
+school_page = SchoolPage()
