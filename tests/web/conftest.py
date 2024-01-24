@@ -32,7 +32,7 @@ def browser_launch():
         site = os.getenv('SITE')
 
         driver = webdriver.Remote(
-            command_executor=f"https://{login}:{password}@{site}",
+            command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
             options=options
         )
 

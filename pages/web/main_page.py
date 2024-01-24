@@ -1,5 +1,5 @@
-from utils import BaseActions, step
-from test_data import LocationsMainPage, user_ui, MoexUrl
+from utils import BaseActions, step, get_current_time
+from test_data import LocationsMainPage, MoexUrl, MoexVariables
 
 
 class MainPage(BaseActions):
@@ -17,36 +17,11 @@ class MainPage(BaseActions):
 
     def check_visibility_search_at_top_menu(self):
         with step('Проверка отображения поиска в верхнем меню'):
-            self.check_visibility(LocationsMainPage.search_field)
-
-    def check_visibility_cabinet_button_at_top_menu(self):
-        with step('Проверка отображения входа в верхнем меню'):
-            self.check_visibility(LocationsMainPage.login_field)
+            self.check_visibility(LocationsMainPage.search_field_icon)
 
     def check_visibility_cart_button_at_top_menu(self):
         with step('Проверка отображения корзины в верхнем меню'):
             self.check_visibility(LocationsMainPage.cart_button)
-
-    def click_cabinet_button_at_top_menu(self):
-        with step('Нажатие кнопки входа'):
-            self.click_button(LocationsMainPage.login_field)
-
-    def check_visibility_login_at_top_menu(self):
-        with step('Имя пользователя отображается в верхнем меню'):
-            self.check_visibility(LocationsMainPage(user_ui.email).login_field_by_user_text)
-
-    def click_user_at_top_menu(self, login):
-        with step('Нажатие кнопки личного кабинета пользователя'):
-            self.click_button(LocationsMainPage(login).login_field_by_user_text)
-
-    def click_logout_at_top_menu(self):
-        with step('Нажать "Выход из системы"'):
-            self.click_button(LocationsMainPage.logout_field)
-
-    def logout(self):
-        with step('Выход из системы'):
-            self.click_user_at_top_menu(user_ui.email)
-            self.click_logout_at_top_menu()
 
     def open_new_tab_school(self):
         with step('Открыть новую вкладку - Обучение'):
@@ -56,6 +31,18 @@ class MainPage(BaseActions):
     def click_href(self, link_href):
         with step('Открыть раздел обучения'):
             self.click_button(LocationsMainPage(link_href).page_href_by_text)
+
+    def filling_search_field(self):
+        with step('Заполнить строку поиска'):
+            self.type_text(LocationsMainPage.search_field, MoexVariables.search_text)
+
+    def check_time_on_site(self):
+        with step('Проверка времени на сайте'):
+            self.check_visibility(LocationsMainPage(get_current_time()).time_on_site)
+
+    def check_visibility_search_result(self):
+        with step('Проверить наличие отображения результатов поиска'):
+            self.check_visibility(LocationsMainPage.search_result_list)
 
     def check_rus_name_at_top_menu(self, rus_text):
         with step('В верхнем меню отображаются элементы на русском языке'):
@@ -69,36 +56,28 @@ class MainPage(BaseActions):
         with step('Переключение языков'):
             self.click_button(LocationsMainPage.switch_lang_button)
 
-    def click_remove_product_from_cart(self):
-        with step('Нажать на удаление продукта из корзины'):
-            self.click_button(LocationsMainPage.remove_product_button)
+    def click_exchange_information(self):
+        with step('Открыть раздел биржевой информации'):
+            self.click_button(LocationsMainPage.exchange_button)
 
-    def check_remove_product_from_cart(self):
-        with step('Проверка корзины, после удаления'):
-            return self.is_visibility_element(LocationsMainPage.remove_product_button)
+    def click_bidding_results(self):
+        with step('Нажать на кнопку "Итоги торгов"'):
+            self.click_button(LocationsMainPage.bidding_results)
 
-    def open_product_catalog(self):
-        with step('Открыть доступные продукты и услуги'):
-            self.click_empty_cart_button_at_top_menu()
-            self.click_add_service_to_cart_button()
+    def open_bidding_results(self):
+        with step('Открыть раздел "Итоги торгов"'):
+            self.click_exchange_information()
+            self.click_bidding_results()
 
-    def click_empty_cart_button_at_top_menu(self):
-        with step('Открыть пустую корзину'):
-            self.click_button(LocationsMainPage.empty_cart_button)
+    def click_burger_button(self):
+        with step('Нажать на кнопку меню'):
+            self.click_button(LocationsMainPage.burger_button)
 
-    def click_add_service_to_cart_button(self):
-        with step('Добавить продукты в корзину'):
-            self.click_button(LocationsMainPage.add_product_button)
+    def check_visibility_open_pop_up_menu(self):
+        with step('Проверить наличие всплывающего окна'):
+            self.check_visibility(LocationsMainPage.pop_up_menu)
 
-    def remove_product_from_cart(self):
-        with step('Очистить корзину'):
-            self.click_filling_cart_button_at_top_menu()
-            self.click_remove_product_from_cart()
-
-    def click_filling_cart_button_at_top_menu(self):
-        with step('Открыть заполненную корзину'):
-            self.click_button(LocationsMainPage.filling_cart_button)
-
-    def check_visibility_filling_cart(self):
-        with step('Проверка отображения заполненной корзины'):
-            self.check_visibility(LocationsMainPage.filling_cart_section)
+    def check_open_visibility_pop_up_menu(self):
+        with step('Проверить открытие всплывающего окна'):
+            self.click_burger_button()
+            self.check_visibility_open_pop_up_menu()

@@ -1,5 +1,4 @@
 class Severity:
-    BLOCKER = 'Blocker'
     CRITICAL = 'Critical'
     MAJOR = 'Major'
     MINOR = 'Minor'

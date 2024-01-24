@@ -1,11 +1,8 @@
 import os
 from dotenv import load_dotenv
-from .users import User
 
 load_dotenv()
 
-auth_email = os.getenv('AUTHORIZATION_LOGIN')
-auth_password = os.getenv('AUTHORIZATION_PASSWORD')
 resources_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../schemas'))
 tmp_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../tmp'))
 
@@ -32,10 +29,6 @@ class FileTypes:
 
 class Method:
     GET = 'get'
-    POST = 'post'
-    PUT = 'put'
-    PATCH = 'patch'
-    DELETE = 'delete'
 
 
 class StatusCode:
@@ -50,6 +43,7 @@ class MoexUrl:
 class MoexVariables:
     rus_text = 'Продукты и услуги'
     eng_text = 'Markets'
+    search_text = 'Вклад'
 
 
 class CoreEndpoints:
@@ -67,8 +61,3 @@ class EngineEndpoints(CoreEndpoints):
 class SecuritiesEndpoints(CoreEndpoints):
     def __init__(self):
         self.SECURITIES_LIST = super().ISS + '/securities.'  # endpoint securities list
-
-
-user_ui = User(
-    email=auth_email,
-    password=auth_password)

@@ -4,6 +4,7 @@ import os
 import allure
 import requests
 from test_data import resources_path
+from datetime import datetime
 
 
 logging.basicConfig(level=logging.INFO,
@@ -44,3 +45,7 @@ def log_to_allure(request, response):
 def log_to_console(response):
     logging.info("Response Code: %s - URL: %s",
                  response.status_code, response.request.url)
+
+
+def get_current_time():
+    return str(datetime.now().strftime("%H:%M"))
