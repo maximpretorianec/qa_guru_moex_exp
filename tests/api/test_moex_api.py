@@ -4,9 +4,9 @@ import allure
 import json
 import os
 
-from api_models import get_data_by_moex_api
-from utils import load_schema, log_to_allure, log_to_console, TypeTag, Severity
-from test_data import ExpectedMessagesMOEX, FileTypes, MoexDataVariables, StatusCode, EngineEndpoints, \
+from moex_project_tests.api_models import get_data_by_moex_api
+from moex_project_tests.utils import load_schema, log_to_allure, log_to_console, TypeTag, Severity
+from moex_project_tests.test_data import ExpectedMessagesMOEX, FileTypes, MoexDataVariables, StatusCode, EngineEndpoints, \
     SecuritiesEndpoints, tmp_path
 
 

@@ -1,8 +1,8 @@
 import allure
 
-from utils import TypeTag, Severity
-from test_data import MoexVariables
-from pages.web import MainPage, LoginPage
+from moex_project_tests.utils import TypeTag, Severity
+from moex_project_tests.test_data import MoexVariables
+from moex_project_tests.pages.web import main_page, login_page
 
 
 @allure.epic('Главная страница')
@@ -15,8 +15,6 @@ class TestMainPage:
     @allure.tag(TypeTag.SMOKE, TypeTag.REGRESS, TypeTag.UI, Severity.CRITICAL)
     @allure.severity(Severity.CRITICAL)
     def test_open_main_page(self):
-        main_page = MainPage()
-
         main_page.check_visibility_moex_icon()
         main_page.check_visibility_cabinet_button_at_top_menu()
         main_page.check_visibility_cart_button_at_top_menu()
@@ -31,10 +29,8 @@ class TestMainPage:
     @allure.tag(TypeTag.REGRESS, TypeTag.UI, Severity.MINOR)
     @allure.severity(Severity.MINOR)
     def test_moex_logout(self):
-        main_page = MainPage()
         main_page.click_cabinet_button_at_top_menu()
 
-        login_page = LoginPage()
         login_page.login()
         main_page.logout()
 
@@ -48,7 +44,6 @@ class TestMainPage:
     @allure.tag(TypeTag.REGRESS, TypeTag.UI, Severity.TRIVIAL)
     @allure.severity(Severity.TRIVIAL)
     def test_switch_language(self):
-        main_page = MainPage()
         main_page.check_rus_name_at_top_menu(MoexVariables.rus_text)
 
         main_page.click_switch_lang_at_top_menu()

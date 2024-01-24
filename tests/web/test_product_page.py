@@ -1,7 +1,7 @@
 import allure
 
-from utils import TypeTag, Severity
-from pages.web import MainPage, LoginPage, ProductPage
+from moex_project_tests.utils import TypeTag, Severity
+from moex_project_tests.pages.web import main_page, login_page, prod_page
 
 
 @allure.epic('Страница продуктов Мосбиржи')
@@ -14,14 +14,11 @@ class TestProdPage:
     @allure.tag(TypeTag.REGRESS, TypeTag.UI, Severity.MAJOR)
     @allure.severity(Severity.MAJOR)
     def test_fill_cart(self):
-        main_page = MainPage()
         main_page.click_cabinet_button_at_top_menu()
 
-        login_page = LoginPage()
         login_page.login()
         main_page.open_product_catalog()
 
-        prod_page = ProductPage()
         prod_page.fill_product_to_cart()
         main_page.click_filling_cart_button_at_top_menu()
 
@@ -35,14 +32,11 @@ class TestProdPage:
     @allure.tag(TypeTag.REGRESS, TypeTag.UI, Severity.MAJOR)
     @allure.severity(Severity.MAJOR)
     def test_remove_product_from_cart(self):
-        main_page = MainPage()
         main_page.click_cabinet_button_at_top_menu()
 
-        login_page = LoginPage()
         login_page.login()
         main_page.open_product_catalog()
 
-        prod_page = ProductPage()
         prod_page.fill_product_to_cart()
         main_page.remove_product_from_cart()
 

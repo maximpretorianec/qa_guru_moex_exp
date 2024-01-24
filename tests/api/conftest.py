@@ -2,8 +2,8 @@ import pytest
 import random
 import os
 
-from test_data import MoexUrl, EngineEndpoints, FileTypes, tmp_path
-from api_models import get_data_by_moex_api
+from moex_project_tests.test_data import MoexUrl, EngineEndpoints, FileTypes, tmp_path
+from moex_project_tests.api_models import get_data_by_moex_api
 
 
 @pytest.fixture()

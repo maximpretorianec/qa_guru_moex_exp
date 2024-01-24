@@ -1,5 +1,5 @@
-from utils import BaseActions, step
-from test_data import LocationsLoginPage, user_ui
+from moex_project_tests.utils import BaseActions, step
+from moex_project_tests.test_data import LocationsLoginPage, user_ui
 
 
 class LoginPage(BaseActions):
@@ -20,3 +20,6 @@ class LoginPage(BaseActions):
             self.type_login_form(user_ui.email)
             self.type_password_form(user_ui.password)
             self.btn_login_click()
+
+
+login_page = LoginPage()

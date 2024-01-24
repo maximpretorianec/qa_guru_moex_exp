@@ -1,5 +1,5 @@
-from utils import BaseActions, step
-from test_data import LocationsProductPage
+from moex_project_tests.utils import BaseActions, step
+from moex_project_tests.test_data import LocationsProductPage
 
 
 class ProductPage(BaseActions):
@@ -29,3 +29,6 @@ class ProductPage(BaseActions):
     def click_fill_cart_button(self):
         with step('Добавление в корзину'):
             self.click_button(LocationsProductPage.filling_cart_button)
+
+
+prod_page = ProductPage()

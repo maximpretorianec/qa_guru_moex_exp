@@ -5,8 +5,8 @@ import os
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from utils import attach
-from test_data import load_dotenv
+from moex_project_tests.utils import attach
+from moex_project_tests.test_data import load_dotenv
 
 
 @pytest.fixture(scope='function', autouse=True)

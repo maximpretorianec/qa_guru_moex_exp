@@ -1,7 +1,7 @@
 import allure
 
-from utils import TypeTag, Severity
-from pages.web import MainPage, LoginPage
+from moex_project_tests.utils import TypeTag, Severity
+from moex_project_tests.pages.web import main_page, login_page
 
 
 @allure.epic('Страница авторизации')
@@ -14,10 +14,8 @@ class TestLoginPage:
     @allure.tag(TypeTag.REGRESS, TypeTag.UI, Severity.MAJOR)
     @allure.severity(Severity.MAJOR)
     def test_moex_login(self):
-        main_page = MainPage()
-        main_page.click_cabinet_button_at_top_menu()
 
-        login_page = LoginPage()
+        main_page.click_cabinet_button_at_top_menu()
         login_page.login()
 
         main_page.check_visibility_login_at_top_menu()

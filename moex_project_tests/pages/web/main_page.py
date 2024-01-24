@@ -1,12 +1,8 @@
-from utils import BaseActions, step
-from test_data import LocationsMainPage, user_ui, MoexUrl
+from moex_project_tests.utils import BaseActions, step
+from moex_project_tests.test_data import LocationsMainPage, user_ui, MoexUrl
 
 
 class MainPage(BaseActions):
-    def __init__(self):
-        with step('Открыть главную страницу'):
-            self.open_site('/')
-
     def check_visibility_moex_icon(self):
         with step('Проверка отображения лого MOEX в верхнем меню'):
             self.check_visibility(LocationsMainPage.moex_logo)
@@ -102,3 +98,6 @@ class MainPage(BaseActions):
     def check_visibility_filling_cart(self):
         with step('Проверка отображения заполненной корзины'):
             self.check_visibility(LocationsMainPage.filling_cart_section)
+
+
+main_page = MainPage()
