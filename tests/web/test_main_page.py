@@ -71,9 +71,9 @@ class TestMainPage:
         bidd_results = BiddingPage()
         bidd_results.check_visibility_bidding_results()
 
-    @allure.story('Итоги торгов')
-    @allure.title('Открытие раздела "итоги торгов" в текущей вкладке')
-    @allure.feature('Открытие "Итоги торгов"')
+    @allure.story('Вспывающее меню')
+    @allure.title('Проверка открытия всплывающего меню')
+    @allure.feature('Раскрытие меню')
     @allure.label('owner', 'mgolubev')
     @allure.label('layer', TypeTag.UI)
     @allure.tag(TypeTag.REGRESS, TypeTag.UI, Severity.MAJOR)

@@ -117,7 +117,7 @@ def test_get_directory_of_market_trading_modes(tmp_dir_control, base_url, get_ma
 @pytest.mark.parametrize("limit", [{'limit': 1},
                                    {'limit': 10},
                                    {'limit': 0}])
-def test_get_all_trades_by_market(base_url, limit):
+def test_get_all_trades_of_market_by_limit(base_url, limit):
     with allure.step("Отправка запроса"):
         trades_data = get_data_by_moex_api(base_url,
                                            EngineEndpoints(add_first_node=MoexDataVariables.engine_by_stock,
