@@ -5,7 +5,7 @@ from moex_project_tests.pages.web import main_lib, bidding_lib
 
 
 @allure.epic('Главная страница')
-class TestMainPage:
+class TestBiddingPage:
     @allure.story('Итоги торгов')
     @allure.title('Открытие раздела "итоги торгов" в текущей вкладке')
     @allure.feature('Открытие "Итоги торгов"')
