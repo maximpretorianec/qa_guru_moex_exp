@@ -78,6 +78,20 @@ Viewing test cases with execution report
 
 ![This is an image](images/screenshots/allure_test_cases.png)
 
+### Integration with Allure TestOps
+
+Storing all test cases
+
+![This is an image](images/screenshots/allure_testOps_cases.png)
+
+Dashboard with statistics
+
+![This is an image](images/screenshots/allure_testOps_dash.png)
+
+Comprehensive information on launches with attachments
+
+![This is an image](images/screenshots/allure_testOps_launch.png)
+
 
 ### Integration with Telegram
 

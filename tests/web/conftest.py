@@ -9,7 +9,7 @@ from moex_project_tests.utils import attach
 from moex_project_tests.test_data import load_dotenv
 
 
-@pytest.fixture(scope='function', autouse=True)
+@pytest.fixture(scope='session', autouse=True)
 def load_env():
     load_dotenv()
 
@@ -32,7 +32,7 @@ def browser_launch():
         site = os.getenv('SITE')
 
         driver = webdriver.Remote(
-            command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
+            command_executor=f"https:/{login}:{password}@{site}",
             options=options
         )
 
