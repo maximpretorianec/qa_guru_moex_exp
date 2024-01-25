@@ -37,17 +37,17 @@
 ### The project is implemented using the following tools:
 
 <p  align="center">
-  <code><img width="5%" title="Pycharm" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/pycharm.png"></code>
-  <code><img width="5%" title="Python" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/python.png"></code>
-  <code><img width="5%" title="Pytest" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/pytest.png"></code>
-  <code><img width="5%" title="Selene" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/selene.png"></code>
-  <code><img width="5%" title="Selenium" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/selenium.png"></code>
-  <code><img width="5%" title="GitHub" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/github.png"></code>
-  <code><img width="5%" title="Jenkins" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/jenkins.png"></code>
-  <code><img width="5%" title="Selenoid" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/selenoid.png"></code>
-  <code><img width="5%" title="Allure Report" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/allure.png"></code>
-  <code><img width="5%" title="Allure TestOps" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/allure_testops.png"></code>
-  <code><img width="5%" title="Telegram" src="https://github.com/maximpretorianec/qa_guru_moex_exp/tree/main/images/icons/telegram.png"></code>
+  <code><img width="5%" title="Pycharm" src="images/icons/pycharm.png"></code>
+  <code><img width="5%" title="Python" src="images/icons/python.png"></code>
+  <code><img width="5%" title="Pytest" src="images/icons/pytest.png"></code>
+  <code><img width="5%" title="Selene" src="images/icons/selene.png"></code>
+  <code><img width="5%" title="Selenium" src="images/icons/selenium.png"></code>
+  <code><img width="5%" title="GitHub" src="images/icons/github.png"></code>
+  <code><img width="5%" title="Jenkins" src="images/icons/jenkins.png"></code>
+  <code><img width="5%" title="Selenoid" src="images/icons/selenoid.png"></code>
+  <code><img width="5%" title="Allure Report" src="images/icons/allure.png"></code>
+  <code><img width="5%" title="Allure TestOps" src="images/icons/allure_testops.png"></code>
+  <code><img width="5%" title="Telegram" src="images/icons/telegram.png"></code>
 </p>
 
 ### Automated tests are executed on the Jenkins server
