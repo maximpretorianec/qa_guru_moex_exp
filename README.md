@@ -87,4 +87,4 @@ Sending test run reports to Telegram
 
 ### Video report of test execution demonstrating a product purchase
 
-![report_gif](images/screenshots/open new tab.gif)
+![report_gif](images/screenshots/open_new_tab.gif)
