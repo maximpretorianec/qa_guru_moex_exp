@@ -3,9 +3,9 @@ from moex_project_tests.test_data import LocationsMainPage, MoexUrl, MoexVariabl
 
 
 class MainPage(BaseActions):
-    def __init__(self):
+    def open_core_site(self):
         with step('Открыть главную страницу'):
-            self.open_site('/')
+            self.open_site('')
 
     def check_visibility_moex_icon(self):
         with step('Проверка отображения лого MOEX в верхнем меню'):
@@ -82,3 +82,6 @@ class MainPage(BaseActions):
         with step('Проверить открытие всплывающего окна'):
             self.click_burger_button()
             self.check_visibility_open_pop_up_menu()
+
+
+main_lib = MainPage()
