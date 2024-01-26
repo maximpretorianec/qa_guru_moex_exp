@@ -92,6 +92,11 @@ Comprehensive information on launches with attachments
 
 ![This is an image](images/screenshots/allure_testOps_launch.png)
 
+### Integration with Jira
+
+Attached test cases and launches
+
+![This is an image](images/screenshots/jira.png)
 
 ### Integration with Telegram
 
