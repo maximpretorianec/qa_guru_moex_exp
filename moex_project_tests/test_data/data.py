@@ -52,12 +52,12 @@ class CoreEndpoints:
 
 class EngineEndpoints(CoreEndpoints):
     def __init__(self, add_first_node=None, add_sec_node=None):
-        self.ENGINE_LIST = f'{super().ISS}/engines.'  # endpoint engine list
-        self.MARKETS_LIST = f'{super().ISS}/engines/{add_first_node}/markets.'  # endpoint markets list
-        self.BOARDS_LIST = f'{super().ISS}/engines/{add_first_node}/markets/{add_sec_node}/boards.'  # endpoint boards list
-        self.TRADES_LIST = f'{super().ISS}/engines/{add_first_node}/markets/{add_sec_node}/trades.'  # endpoint boards list
+        self.ENGINE_LIST = f'{super().ISS}/engines.'
+        self.MARKETS_LIST = f'{super().ISS}/engines/{add_first_node}/markets.'
+        self.BOARDS_LIST = f'{super().ISS}/engines/{add_first_node}/markets/{add_sec_node}/boards.'
+        self.TRADES_LIST = f'{super().ISS}/engines/{add_first_node}/markets/{add_sec_node}/trades.'
 
 
 class SecuritiesEndpoints(CoreEndpoints):
     def __init__(self):
-        self.SECURITIES_LIST = super().ISS + '/securities.'  # endpoint securities list
+        self.SECURITIES_LIST = super().ISS + '/securities.'

@@ -21,6 +21,9 @@ def load_schema(file):
 def send_request(base_url, endpoint, method, **kwargs):
     method_func = getattr(requests, method.lower())
     response = method_func(base_url + endpoint, **kwargs)
+
+    log_to_allure(response.request, response)
+    log_to_console(response)
     return response
 
 

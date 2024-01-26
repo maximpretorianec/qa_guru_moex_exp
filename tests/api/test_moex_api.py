@@ -5,7 +5,7 @@ import json
 import os
 
 from moex_project_tests.api_models import get_data_by_moex_api
-from moex_project_tests.utils import load_schema, log_to_allure, log_to_console, TypeTag, Severity
+from moex_project_tests.utils import load_schema, TypeTag, Severity
 from moex_project_tests.test_data import ExpectedMessagesMOEX, FileTypes, MoexDataVariables, StatusCode, EngineEndpoints, \
     SecuritiesEndpoints, tmp_path
 
@@ -28,9 +28,6 @@ def test_get_available_trade_system(base_url, file_type):
         if file_type == FileTypes.json:
             jsonschema.validate(result.json(), load_schema('get_iss_engines.json'))
 
-    log_to_allure(result.request, result)
-    log_to_console(result)
-
 
 @allure.tag(TypeTag.API)
 @allure.severity(Severity.MAJOR)
@@ -49,9 +46,6 @@ def test_get_securities_list(base_url, file_type):
         assert ExpectedMessagesMOEX.iss_securities in result.text
         if file_type == FileTypes.json:
             jsonschema.validate(result.json(), load_schema('get_iss_security.json'))
-
-    log_to_allure(result.request, result)
-    log_to_console(result)
 
 
 @allure.tag(TypeTag.API)
@@ -72,9 +66,6 @@ def test_get_market_list_by_engine_item(base_url, get_engine_from_list, file_typ
         assert ExpectedMessagesMOEX.iss_markets in result.text
         if file_type == FileTypes.json:
             jsonschema.validate(result.json(), load_schema(f'get_iss_markets_by_engine_{engine}.json'))
-
-    log_to_allure(result.request, result)
-    log_to_console(result)
 
 
 @allure.tag(TypeTag.API)
@@ -104,9 +95,6 @@ def test_get_directory_of_market_trading_modes(tmp_dir_control, base_url, get_ma
         if file_type == FileTypes.json:
             assert os.path.getsize(f'{json_file}') > 0
 
-    log_to_allure(boards_data.request, boards_data)
-    log_to_console(boards_data)
-
 
 @allure.tag(TypeTag.API)
 @allure.severity(Severity.MAJOR)
@@ -133,6 +121,3 @@ def test_get_all_trades_of_market_by_limit(base_url, limit):
             assert len(trades_data.json()['trades']['data']) == limit['limit']
         else:
             assert len(trades_data.json()['trades']['data']) == limit['limit'] + 1
-
-    log_to_allure(trades_data.request, trades_data)
-    log_to_console(trades_data)

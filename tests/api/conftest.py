@@ -1,12 +1,13 @@
 import pytest
 import random
+import shutil
 import os
 
 from moex_project_tests.test_data import MoexUrl, EngineEndpoints, FileTypes, tmp_path
 from moex_project_tests.api_models import get_data_by_moex_api
 
 
-@pytest.fixture()
+@pytest.fixture(scope='module')
 def tmp_dir_control():
     if not os.path.exists(tmp_path):
         os.mkdir(tmp_path)
@@ -14,6 +15,9 @@ def tmp_dir_control():
     if os.listdir(tmp_path):
         for filename in os.listdir(tmp_path):
             os.remove(os.path.join(tmp_path, filename))
+    os.rmdir(tmp_path)
+
+
 
 
 @pytest.fixture()
