@@ -13,11 +13,9 @@ def tmp_dir_control():
         os.mkdir(tmp_path)
     yield
     if os.listdir(tmp_path):
-        for filename in os.listdir(tmp_path):
-            os.remove(os.path.join(tmp_path, filename))
-    os.rmdir(tmp_path)
-
-
+        shutil.rmtree(tmp_path)
+    else:
+        os.rmdir(tmp_path)
 
 
 @pytest.fixture()

@@ -60,7 +60,7 @@ class MainPage(BaseActions):
         with step('В верхнем меню отображаются элементы на английском языке'):
             self.check_visibility(LocationsMainPage(eng_text).header_obj_with_text)
 
-    def click_switch_lang_at_top_menu(self):
+    def click_switch_lang(self):
         with step('Переключение языков'):
             self.click_button(LocationsMainPage.switch_lang_button)
 

@@ -30,7 +30,7 @@ class TestMainPage:
         main_lib.open_core_site()
         main_lib.check_rus_name_at_top_menu(MoexVariables.rus_text)
 
-        main_lib.click_switch_lang_at_top_menu()
+        main_lib.click_switch_lang()
         main_lib.check_eng_name_at_top_menu(MoexVariables.eng_text)
 
     @allure.story('Поиск')
