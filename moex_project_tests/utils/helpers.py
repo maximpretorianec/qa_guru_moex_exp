@@ -4,7 +4,6 @@ import os
 import allure
 import requests
 import zoneinfo
-import tzdata
 from moex_project_tests.test_data import resources_path
 from datetime import datetime
 

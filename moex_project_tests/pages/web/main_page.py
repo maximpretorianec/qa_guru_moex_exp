@@ -1,29 +1,30 @@
 from moex_project_tests.utils import base_lib, get_current_time
-from selene import be, have, browser
 from moex_project_tests.test_data import MoexUrl, MoexVariables
+from selene import be, have, browser
 from allure import step
 
 
-class MainPage():
-    moex_logo = browser.element('.header__logo .nuxt-link-exact-active .app-logo img')
-    lang_section = browser.element('.lang-switch')
-    search_field_icon = browser.element('label[for=moex-search-input] svg')
-    cart_button = browser.element('.cart-button')
-    switch_lang_button = browser.element(
-        '//span[contains(@class, "lang-switch__lang") and not(contains(@class, "lang-switch__lang--active"))]')
-    search_field = browser.element('div #moex-search-input')
-    search_result_list = browser.element('div .search-titles-list')
-    exchange_button = browser.element('//ul[@class="site-header-menu__main-list"]/li[2]')
-    bidding_results = browser.element('//div[contains(.,"По всем рынкам Московской биржи")]/ancestor::li[1]')
-    burger_button = browser.element('button[aria-label*="Открыть бургер-меню"]')
-    pop_up_menu = browser.element('.header-burger__desktop')
+class MainPage:
+    core_url = browser.element('')
+    moex_school = browser.element(f'//a[contains(@href, "{MoexUrl.SCHOOL_URL}") and @class="site-header-menu__top-link"]')
+    burger_button = browser.element('//button[@aria-label="Открыть бургер-меню"]')
+    cart_button = browser.element('//button[contains(@class, "cart-button")]')
+    search_field_icon = browser.element('//label[@for="moex-search-input"]')
+    pop_up_menu = browser.element('//div[contains(@class, "header-burger__desktop")]')
+    search_field = browser.element('//div/input[contains(@id, "moex-search-input")]')
+    search_result_list = browser.element('//div/ul[contains(@class, "search-titles-list")]')
+    lang_section = browser.element('//div[contains(@class, "lang-switch")]')
+    moex_logo = browser.element(
+        '//div[contains(@class, "header__logo")]//div[contains(@class, "app-logo--standard")]//child::img[@alt="Logo"]')
+    time_on_site = browser.element('//div[@class="header-nav__date"]')
     header_obj_with_rus_text = browser.element(
         f'//ul[@class="site-header-menu__main-list"]/*[contains(.,"Продукты и услуги")]')
     header_obj_with_eng_text = browser.element(
         f'//ul[@class="site-header-menu__main-list"]/*[contains(.,"Markets")]')
-    time_on_site = browser.element('//div[@class="header-nav__date"]')
-    moex_school = browser.element(f'a[href*="{MoexUrl.SCHOOL_URL}"].site-header-menu__top-link')
-    core_url = browser.element('')
+    switch_lang_button = browser.element(
+        '//span[contains(@class, "lang-switch__lang") and not(contains(@class, "lang-switch__lang--active"))]')
+    exchange_button = browser.element('//ul[@class="site-header-menu__main-list"]/li[2]')
+    bidding_results = browser.element('//div[contains(.,"По всем рынкам Московской биржи")]/ancestor::li[1]')
 
     def open_core_site(self):
         with step('Открыть главную страницу'):

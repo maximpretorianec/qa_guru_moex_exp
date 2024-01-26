@@ -4,8 +4,8 @@ from selene import be, browser
 from allure import step
 
 
-class SchoolPage():
-    moex_school_logo = browser.element('.nuxt-link-exact-active div')
+class SchoolPage:
+    moex_school_logo = browser.element('//a[contains(@class,"nuxt-link-exact-active")]/div')
 
     def check_visibility_moex_school_logo(self, loc_moex_school_logo=moex_school_logo):
         with step('Иконка школы MOEX отображается в верхнем меню'):
