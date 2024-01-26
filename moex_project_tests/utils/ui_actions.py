@@ -1,19 +1,10 @@
-from selene import browser, be
+from selene import browser
 from allure import step
 
 
 class BaseActions:
     def open_site(self, url):
         browser.open(url)
-
-    def type_text(self, location, text):
-        browser.element(location).should(be.visible).type(text)
-
-    def click_button(self, location):
-        browser.element(location).should(be.visible).click()
-
-    def check_visibility(self, location):
-        browser.element(location).should(be.visible)
 
     def switch_tab(self):
         browser.switch_to_next_tab()
@@ -25,3 +16,6 @@ class BaseActions:
     def get_curr_url(self):
         with step('Вернуть текущий url'):
             return browser.driver.current_url
+
+
+base_lib = BaseActions()

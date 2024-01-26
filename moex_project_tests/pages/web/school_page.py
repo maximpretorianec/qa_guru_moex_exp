@@ -1,11 +1,20 @@
-from moex_project_tests.utils import BaseActions, step
-from moex_project_tests.test_data import LocationsSchoolPage
+from moex_project_tests.utils import base_lib
+from moex_project_tests.test_data import MoexUrl
+from selene import be, browser
+from allure import step
 
 
-class SchoolPage(BaseActions):
-    def check_visibility_moex_school_logo(self):
+class SchoolPage():
+    moex_school_logo = browser.element('.nuxt-link-exact-active div')
+
+    def check_visibility_moex_school_logo(self, loc_moex_school_logo=moex_school_logo):
         with step('Иконка школы MOEX отображается в верхнем меню'):
-            self.check_visibility(LocationsSchoolPage.moex_school_logo)
+            loc_moex_school_logo.should(be.visible)
+
+    def check_visibility_page(self):
+        with step('Проверка отображения страницы и верного адреса'):
+            school_lib.check_visibility_moex_school_logo()
+            base_lib.is_assert_equal_values(MoexUrl.SCHOOL_URL, base_lib.get_curr_url())
 
 
 school_lib = SchoolPage()

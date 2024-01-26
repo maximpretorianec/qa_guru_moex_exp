@@ -14,7 +14,7 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope='module', autouse=True)
 def browser_launch():
     with allure.step("Установка конфигурации драйвера"):
         options = Options()

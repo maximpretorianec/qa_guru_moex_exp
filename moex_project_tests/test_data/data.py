@@ -41,8 +41,6 @@ class MoexUrl:
 
 
 class MoexVariables:
-    rus_text = 'Продукты и услуги'
-    eng_text = 'Markets'
     search_text = 'Вклад'
 
 
