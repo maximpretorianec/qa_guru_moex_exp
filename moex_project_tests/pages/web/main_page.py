@@ -7,6 +7,13 @@ class MainPage(BaseActions):
         with step('Открыть главную страницу'):
             self.open_site('')
 
+    def check_visibility_base_page_elements(self):
+        with step('Проверка базовых элементов страницы'):
+            self.check_visibility_moex_icon()
+            self.check_visibility_cart_button_at_top_menu()
+            self.check_visibility_lang_switch_at_top_menu()
+            self.check_visibility_search_at_top_menu()
+
     def check_visibility_moex_icon(self):
         with step('Проверка отображения лого MOEX в верхнем меню'):
             self.check_visibility(LocationsMainPage.moex_logo)

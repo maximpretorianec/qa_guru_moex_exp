@@ -17,10 +17,7 @@ class TestMainPage:
     def test_open_main_page(self):
         main_lib.open_core_site()
 
-        main_lib.check_visibility_moex_icon()
-        main_lib.check_visibility_cart_button_at_top_menu()
-        main_lib.check_visibility_lang_switch_at_top_menu()
-        main_lib.check_visibility_search_at_top_menu()
+        main_lib.check_visibility_base_page_elements()
 
     @allure.story('Смена языков')
     @allure.title('Смена языка на странице на английский')
